@@ -1,0 +1,1 @@
+insert into ExampleEntity (text) value ('test text');

@@ -1,0 +1,19 @@
+version: '2'
+volumes:
+  testbase:
+
+services:
+
+  mysql-testbase:
+    image: mysql:5.7
+    container_name: mysql-testbase
+    volumes:
+      - testbase:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=testbase
+      - MYSQL_USER=testbase
+      - MYSQL_PASSWORD=testbase
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
